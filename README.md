@@ -1,24 +1,28 @@
-# README
+# Gorails forum mini series
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Start with models
 
-Things you may want to cover:
+## Database Structure
 
-* Ruby version
+1. User
+- Devise gem
+* email:string
+* password:string
 
-* System dependencies
+has_many :forum_threads
+has_many :forum_post
 
-* Configuration
+2. ForumThread
+* user_id:integer
+* subject:string
 
-* Database creation
+belongs_to :user
+has_many :forum_posts
 
-* Database initialization
+3. ForumPost
+* forum_thread_id:integer
+* user_id:integer
+* body:text
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+belongs_to :forum_thread_id
+belongs_to :user
