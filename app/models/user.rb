@@ -29,4 +29,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :forum_threads
   has_many :forum_posts
+  
 end
